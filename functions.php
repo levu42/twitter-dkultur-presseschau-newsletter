@@ -21,7 +21,7 @@ function twitterAPI() {
 function twitterCachedCall($method, $parameters, $field = null, $lifetime = 3600) {
 	$twitter = twitterAPI();
 	$refresh = false;
-	$fn = __DIR__ . 'cache/' . md5(OAUTH_TOKEN . $method . serialize($parameters));
+	$fn = __DIR__ . '/cache/' . md5(OAUTH_TOKEN . $method . serialize($parameters));
 	if (!file_exists($fn)) {
 		$refresh = true;
 	} else {
