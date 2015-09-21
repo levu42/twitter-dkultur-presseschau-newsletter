@@ -29,6 +29,7 @@ function get_followers() {
 $followers = get_followers();
 
 function send_text($users) {
+	chdir(__DIR__);
 	$text = shell_exec('./text.sh');
 	global $twitter;
 	foreach($users as $u) {
