@@ -31,6 +31,7 @@ $followers = get_followers();
 function send_text($users) {
 	chdir(__DIR__);
 	$text = shell_exec('./text.sh');
+	file_put_contents('./tage/' . date('Y-m-d'), $text);
 	global $twitter;
 	foreach($users as $u) {
 		$fields = array(
